@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  /* .container {
+    position: relative;
+    display: inline;
+    text-align: center;
+  }  */
+  
+  .enter {
+  
+    position:absolute;
+    top: 70%;
+    left: 63%;
+    transform: translate(-70%, -70%);
+    
+    
+  }
+  body {
+   background: url("/src/imagenes/LolBackground34.png");
+    background-attachment: scroll;
+    background-size: cover;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+  }
+  /* 
+  .footer{
+    background: #000;
+    display: flex;
+    justify-content: center;
+  }
+    .pie{
+      background: black;
+      width: 400px;
+      text-align: center;
+      font-family: 'Noto Sans JP', sans-serif;
+    } */
+  
+  
+  #buttonEnter {
+    outline: none;
+    color: wheat;
+    cursor: pointer;
+    margin: 3rem 0;
+    font-size: 1.5625rem;
+    padding: 1.5rem 3rem;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    border: 0.0625rem solid #07cbe9;
+    font-family: "Marcellus SC", serif;
+    position: absolute;
+    width: unset;
+    justify-content: flex-end;
+    align-content: center;
+  }
+  
+  #buttonEnter:hover {
+      letter-spacing: 0.375rem;
+      border: 0.0625rem solid #b48643;
+      box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
+      text-shadow: 0.0625rem 0.0625rem 0.5rem #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
+  } 

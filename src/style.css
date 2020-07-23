@@ -1,0 +1,472 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  } 
+  body::-webkit-scrollbar {
+  width: 20px;
+  background: rgba(1, 15, 24, 0.651);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+  background: rgba(235, 178, 24, 0.719);
+  border-radius: 10px;
+  border-right: 6px solid #807729;
+  }
+  .padre{
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: 'Spectral', serif; 
+  background-image: url("./imagenes/fondo3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  }
+  
+    /* .encabezado{
+      background: rgba(3, 28, 41, 0.767);
+      border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+    } */
+          .logo{     
+            width: 10%;
+            height: 10%;
+            margin: 2em 0em 0em 2em;
+            margin-top: 1em,
+          }
+          .formBuscador{
+            background: #C4C4C4;
+            height: 30px;
+            border-radius: 5px;
+            background: none;
+            border: none;
+            outline: none;
+            margin:0em 0em 0em 0em;
+            
+          }
+          .searcher{
+            display: flex;
+            background-color: rgb(190, 187, 187);
+            border-radius: 5px;
+            border: solid 1px rgb(77, 77, 78);
+            margin: 1em;
+            margin-top: -1em;
+          }
+          .encabezado-hijo{
+            display: grid;
+            justify-content: right;
+          }
+          .searcher img{
+            margin: 0.4em;
+            width: 1.8em;
+            height: 1.8em;       
+          }
+          #error {
+            background: rgba(218, 171, 45, 0.9);
+            font-size: 30px;
+            text-align: center;
+            padding: 1em 1em;
+            margin-right: 5em;
+            margin-left: 7em;
+            border-radius: 0.2em;
+            border: solid 1px rgb(32, 30, 22);
+          }
+      
+  /* ------------estilos video------------------------*/
+        .contenedorVideo {
+          display: none; /*le he puesto que se oculte*/
+          position: fixed;
+          z-index: 3;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+        .modal{
+          position: relative;
+          margin: auto;
+          width: 80%;
+          text-align: right;
+        }
+        .pantallaVideo{
+          display: grid;
+          justify-items: center;
+        }
+        .cerrar{
+          font-size: 3em;
+          cursor: pointer;
+          color: rgba(235, 179, 24, 0.945);
+        }
+  
+        .pantallaVideo{
+          position: relative;
+          padding-bottom: 56.25%; /* 16/9 ratio */
+          padding-top: 30px; /* IE6 workaround*/
+          height: 0;
+          overflow: hidden;
+          }
+          
+          .pantallaVideo iframe,
+          .pantallaVideo object,
+          .pantallaVideo embed {
+          position: absolute;
+          top: 69px;
+          left: 118px;
+          width: 71%;
+          height: 63%;    
+          }
+  /* ------------estilos menu-----------------------*/
+      .menu{
+        background:rgba(63, 65, 66, 0.973);
+        padding: 0.7em;
+      }
+      .menu >*{
+        margin: 0.3em;
+        width: 120px;
+        outline: none;
+        text-align: center;
+        border-bottom: solid 1px rgba(235, 179, 24, 0.945);
+      }
+      .estiloBoton {
+        background: none;
+        border: none;
+        color: rgba(235, 179, 24, 0.945);
+        font-family: serif;
+        font-size: 21px;
+        text-shadow: -1px 2px 4px rgb(117, 116, 116);
+      }
+      .selectStyle {
+        background: transparent;
+        border: none;
+        color: rgba(235, 179, 24, 0.945);
+        font-family: serif;
+        font-size: 21px;
+        text-shadow: -1px 2px 4px rgb(117, 116, 116);
+      }
+      .menu >*:hover{
+        transform: scale(1.1);
+        transition: 0.5;
+        color: #ffffff;
+      }
+      .cantidadMostrada{
+        background:transparent;
+        color: rgba(235, 179, 24, 0.945);
+        font-family: serif;
+        font-size: 21px;
+        border: none;
+        text-align: end;
+        margin: 0.3em 1em;
+      }
+  
+  /* ------------estilos card-----------------------*/
+    /* main{
+      background:rgba(49, 48, 46, 0.699);
+    } */
+    .galeriaDeCampeones{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    .casillaCampeon{
+      margin: 1em 1em;
+    }
+    .casillaCampeon:hover{
+      transform: scale(1.1);
+      transition: 0.5;
+    }
+    .imagenCampeon{
+      width: 25em;
+      height: auto;
+      border: solid 2px rgba(235, 179, 24, 0.945);
+      border-radius: 0.3em;
+    }
+    .nombreCampeon{
+      font-family: serif;
+      text-align: center;
+      font-size: 25px;
+      color: #FFFFFF;
+    }
+  
+    /*-------------estilo detalle de campeon-------------*/
+  .detalleCampeon{
+    border: 4px solid rgba(170, 146, 8, 0.856);
+    background-color:rgba(170, 146, 8, 0.856);
+    max-width: 500px;
+    margin: 1em auto;
+    text-align: center;
+  }
+  .titulo{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    justify-content: center;
+  }
+  .hp{
+    background-color: #BCAB4F;
+    color: rgb(32, 30, 22);
+    padding: 1em;
+    font-family: serif;
+    margin: 3px 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .historiaNombre{
+    font-style: oblique;
+    background-color: rgb(32, 30, 22);
+    color: #BCAB4F;
+    padding: 0.5em;
+    font-size: 20px;
+    font-family: serif;
+    margin: 3px 5px;
+    text-align: left;
+    text-transform: uppercase;  
+  }
+  .historia{
+    margin:0;
+  }
+  .imgCampeon{
+    width:480px;
+  }
+  .historiaTags{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(32, 30, 22);
+    padding: 0.2em;
+    font-size: 20px;
+    font-family: serif;
+  }
+  .descripcionCampeon{
+    text-align: center;
+    font-size: 29px;
+    color: rgb(97, 91, 91);
+    border-radius: 5px;
+  }
+  .historiaTitle{
+    background-color:rgb(19, 81, 97);
+    color: rgb(187, 182, 182);
+    text-transform: capitalize;
+    max-width: 10em;
+    margin-right: 0em;
+    margin-left: auto;
+    border-radius: 0.2em;
+    position: relative;
+    font-size: 22px;
+    border: solid 1px rgb(32, 30, 22);
+  }
+  .historiaCampeon{
+    line-height: 17px;
+    background-color:rgb(32, 30, 22);
+    color: rgb(187, 182, 182);
+    font-size: 18px;
+    font-family: serif;
+    padding:  0.7em 0.5em 0.5em 0.5em;
+    border-radius: 0.3em;
+    margin-top: -0.5em;
+    text-align: justify;
+  }
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .info img{
+    width: 40px;
+    height: auto;
+  }
+  .info div{
+    margin: 1em;
+    text-align: center;
+  }
+  .info p{
+    color:rgba(170, 146, 8, 0.856);
+    padding: 0.5em 0em;
+  }
+  
+  
+  /* ------------estilos roles-----------------------*/
+  
+  .roles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .divRol{
+    margin: 2em 4em;
+  }
+  .styleInput{
+    background:rgb(50, 50, 51);
+    border: 4px solid rgba(235, 202, 18, 0.856);
+    border-radius: 122px;
+    width: 168px;
+    height: 167px;
+    box-shadow: 3px 10px 17px 3px rgba(0,0,0,0.75);
+  }
+  .pRoles{
+    padding: 0.3em;
+    font-family: serif;
+    text-align: center;
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color: #807729;
+    border-radius: 1em;
+    margin: 0.5em;
+  }
+  .divRol:hover{
+    transform: scale(1.1);
+    transition: 0.5;  
+  }
+  
+  /*-------------estilo habilidades-------------*/
+  .sectionAvage{
+    margin: 3em auto;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    }
+  .mapLol{
+      width: 400px;
+      box-shadow: 1px 10px 17px 3px rgba(0,0,0,0.75);
+      border-radius: 8px;
+      border: 3px solid rgba(235, 178, 24, 0.719);
+  }
+  .styleAverage{
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background: rgba(3, 28, 41, 0.767);
+    color: #C4C4C4;
+    border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 21px;
+    line-height: 36px;
+    text-shadow: -1px 2px 4px rgba(39, 38, 38, 0.856);
+    font-family: serif;
+    box-shadow: 1px 10px 17px 3px rgba(0,0,0,0.75);
+  }
+  
+  /*-------------estilo de footer-------------*/
+  .footer{
+    background: rgb(28, 28, 29);
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    margin-top: 90px rgb(28, 28, 29);
+    margin-bottom: 0;
+  }
+  /*-------------Estilos botton top-------------*/
+  .contenedorSubir{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  z-index: -1;
+  }
+  .botonSubir{
+  width: 0px;
+  height: 0px;
+  background: rgba(10, 27, 37, 0.767);
+  border: 4px solid rgba(248, 199, 64, 0.952);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  }
+  .botonSubir img{
+  position: absolute;
+  font-size: 25px;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: white;
+  transition: .2s;
+  }
+  .show{
+  z-index: 10;
+  }
+  .show .botonSubir{
+  animation: popup .3s ease-in-out;
+  width: 66px;
+  height: 66px;
+  z-index: 11;
+  }
+  .show img{
+   transform: translate(-50%, -50%) scale(1);
+  }
+  @keyframes popup{
+    0%{
+      width: 0px;
+      height: 0px;
+    }
+    50%{
+      width: 80px;
+      height: 80px;
+    }
+    100%{
+      width: 66px;
+      height: 66px;
+    }
+  }
+  
+  .ocultar{
+    display: none;
+  }
+  
+  .mostrar {
+    display: block;
+  }
+  @media(max-width:425px){
+    .searcher{
+      margin-top: 1em;
+    }
+    .imgCampeon{
+      width:350px;
+    }
+    #error {
+      margin-right: 0.5em;
+      margin-left: 0.5em;  
+    }
+  
+  }
+  @media all and (max-width: 400px){
+    .searcher{
+      margin-top: 0.5em;
+    }
+    .imagenCampeon{
+      width: 18em;
+      height: auto;
+    }
+    .roles{
+      margin: 1em;
+    }
+    .divRol{
+      margin: 1em 4em;
+    }
+    .mapLol{
+      width: 280px;
+      margin-top: 1em;
+    }
+    .imgCampeon{
+      width:300px;
+    }
+    #error {
+    
+      margin-right: 1em;
+      margin-left: 1em;
+     
+    }
+  
+  };
